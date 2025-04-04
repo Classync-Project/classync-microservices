@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+      </profile>
+      <profile name="Annotation profile for user-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.36/lombok-1.18.36.jar" />
+        </processorPath>
+        <module name="user-service" />
+      </profile>
+      <profile name="Annotation profile for api-service" enabled="true">
+        <sourceOutputDir name="../api-service/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../api-service/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="api-service" />
+      </profile>
+      <profile name="Annotation profile for discussion-service" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="announcement-service" />
+        <module name="discussion-service" />
+        <module name="assignment-service" />
+        <module name="classroom-service" />
+      </profile>
+      <profile name="Annotation profile for discovery-service" enabled="true">
+        <sourceOutputDir name="../discovery-service/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../discovery-service/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="discovery-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="api-gateway" target="21" />
+      <module name="eureka-discovery-service" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="announcement-service" options="-parameters" />
+      <module name="api-gateway" options="-parameters" />
+      <module name="api-service" options="-parameters" />
+      <module name="assignment-service" options="-parameters" />
+      <module name="classroom-service" options="-parameters" />
+      <module name="discovery-service" options="-parameters" />
+      <module name="discussion-service" options="-parameters" />
+      <module name="eureka-discovery-service" options="-parameters" />
+      <module name="user-service" options="-parameters" />
+    </option>
+  </component>
+</project>
